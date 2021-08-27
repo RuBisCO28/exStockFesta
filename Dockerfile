@@ -27,7 +27,7 @@ RUN apk update && \
 COPY Gemfile ${ROOT}
 COPY Gemfile.lock ${ROOT}
 
-RUN bundle install
+RUN bundle install -j4
 RUN apk del build-packs
 
 COPY . ${ROOT}
