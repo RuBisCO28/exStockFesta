@@ -55,13 +55,12 @@ module.exports = (env, argv) => {
       }
     },
     devServer: {
+      contentBase: path.resolve(__dirname, './assets'),
+      port: 3500,
       disableHostCheck: true,
-      hot: true,
-      public: 'localhost:3500',
       headers: {
         "Access-Control-Allow-Origin": "*"
       },
-      publicPath: '/assets/'
     }
   };
 };

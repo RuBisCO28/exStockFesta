@@ -36,15 +36,15 @@ module WebpackBundleHelper
   end
 
   def pro_manifest
-    File.read("public/assets/manifest.json")
+    File.read("manifest.json")
   end
 
   def dev_manifest
-    OpenURI.open_uri("#{asset_server}/public/assets/manifest.json").read
+    OpenURI.open_uri("#{asset_server}/manifest.json").read
   end
 
   def test_manifest
-    File.read("public/assets-test/manifest.json")
+    File.read("manifest.json")
   end
 
   def manifest
@@ -60,6 +60,6 @@ module WebpackBundleHelper
 
   def asset_bundle_path(entry, **options)
     valid_entry?(entry)
-    asset_path("#{asset_server}/public/assets/" + manifest.fetch(entry), **options)
+    asset_path("#{asset_server}/" + manifest.fetch(entry), **options)
   end
 end
