@@ -4,18 +4,18 @@ module WebpackBundleHelper
   class BundleNotFound < StandardError; end
 
   def javascript_bundle_tag(entry, **options)
-    path = asset_bundle_path("#{entry}.js")
-
-    options = {
-      src: path,
-      defer: true,
-    }.merge(options)
-
-    # async と defer を両方指定した場合、ふつうは async が優先されるが、
-    # defer しか対応してない古いブラウザの挙動を考えるのが面倒なので、両方指定は防いでおく
-    options.delete(:defer) if options[:async]
-
-    javascript_include_tag "", **options
+    #path = asset_bundle_path("#{entry}.js")
+#
+    #options = {
+    #  src: path,
+    #  defer: true,
+    #}.merge(options)
+#
+    ## async と defer を両方指定した場合、ふつうは async が優先されるが、
+    ## defer しか対応してない古いブラウザの挙動を考えるのが面倒なので、両方指定は防いでおく
+    #options.delete(:defer) if options[:async]
+#
+    #javascript_include_tag "", **options
   end
 
   def stylesheet_bundle_tag(entry, **options)
@@ -61,5 +61,9 @@ module WebpackBundleHelper
   def asset_bundle_path(entry, **options)
     valid_entry?(entry)
     asset_path("#{asset_server}/" + manifest.fetch(entry), **options)
+  end
+
+  def webpack_asset_path(path)
+    "http://localhost:3500/#{path}"
   end
 end

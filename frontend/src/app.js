@@ -1,6 +1,12 @@
 // import Vue from "vue";
 
-console.log("Hello");
+const component = () => {
+  const element = document.getElementById("app");
+  element.innerHTML = "Hello webpackkkkk!!!";
+  return element;
+};
+
+document.body.appendChild(component());
 
 //document.addEventListener("DOMContentLoaded", () => {
 //  const templates = document.querySelectorAll("[data-vue]");

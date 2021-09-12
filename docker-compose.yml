@@ -21,7 +21,7 @@ services:
   webpack:
     build: ./frontend
     command: [npm, run, start]
-    volumes: 
+    volumes:
       - ./frontend:/frontend
     ports:
       - "3500:3500"

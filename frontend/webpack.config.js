@@ -12,7 +12,14 @@ module.exports = (env, argv) => {
     },
     output: {
       path: path.resolve(__dirname, './assets'),
-      filename: isProduction ? '[name]-[contentHash].js' : '[name]-[hash].js',
+      //filename: isProduction ? '[name]-[contentHash].js' : '[name]-[hash].js',
+      filename: '[name].js',
+      publicPath: "assets/"
+    },
+    watch: true,
+    watchOptions: {
+      aggregateTimeout: 200,
+      poll: 1000
     },
     module: {
       rules: [
