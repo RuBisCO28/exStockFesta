@@ -4,18 +4,18 @@ module WebpackBundleHelper
   class BundleNotFound < StandardError; end
 
   def javascript_bundle_tag(entry, **options)
-    #path = asset_bundle_path("#{entry}.js")
-#
-    #options = {
-    #  src: path,
-    #  defer: true,
-    #}.merge(options)
-#
-    ## async と defer を両方指定した場合、ふつうは async が優先されるが、
-    ## defer しか対応してない古いブラウザの挙動を考えるのが面倒なので、両方指定は防いでおく
-    #options.delete(:defer) if options[:async]
-#
-    #javascript_include_tag "", **options
+    path = asset_bundle_path("#{entry}.js")
+
+    options = {
+      src: path,
+      defer: true,
+    }.merge(options)
+
+    # async と defer を両方指定した場合、ふつうは async が優先されるが、
+    # defer しか対応してない古いブラウザの挙動を考えるのが面倒なので、両方指定は防いでおく
+    options.delete(:defer) if options[:async]
+
+    javascript_include_tag "", **options
   end
 
   def stylesheet_bundle_tag(entry, **options)
@@ -40,7 +40,8 @@ module WebpackBundleHelper
   end
 
   def dev_manifest
-    OpenURI.open_uri("#{asset_server}/manifest.json").read
+    #OpenURI.open_uri("#{asset_server}/manifest.json").read
+    OpenURI.open_uri("http://stockfesta_webpack_1:3500/manifest.json").read
   end
 
   def test_manifest

@@ -1,8 +1,8 @@
-// import Vue from "vue";
+import Vue from "vue";
 
 const component = () => {
   const element = document.getElementById("app");
-  element.innerHTML = "Hello webpackkkkk!!!";
+  element.innerHTML = "Hello webpackaakk!!!";
   return element;
 };
 

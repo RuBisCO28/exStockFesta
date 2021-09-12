@@ -15,7 +15,7 @@
   \********************/
 /***/ (() => {
 
-eval("// import Vue from \"vue\";\nconst component = () => {\n  const element = document.getElementById(\"app\");\n  element.innerHTML = \"Hello webpackkkkk!!!\";\n  return element;\n};\n\ndocument.body.appendChild(component()); //document.addEventListener(\"DOMContentLoaded\", () => {\n//  const templates = document.querySelectorAll(\"[data-vue]\");\n//  for (let el of templates) {\n//let app = new Vue(components[el.dataset.vue]);\n//    app.$mount(el);\n//  }\n//});\n\n//# sourceURL=webpack://frontend/./src/app.js?");
+eval("// import Vue from \"vue\";\nconst component = () => {\n  const element = document.getElementById(\"app\");\n  element.innerHTML = \"Hello webpackkaaakk!!!\";\n  return element;\n};\n\ndocument.body.appendChild(component()); //document.addEventListener(\"DOMContentLoaded\", () => {\n//  const templates = document.querySelectorAll(\"[data-vue]\");\n//  for (let el of templates) {\n//let app = new Vue(components[el.dataset.vue]);\n//    app.$mount(el);\n//  }\n//});\n\n//# sourceURL=webpack://frontend/./src/app.js?");
 
 /***/ })
 
