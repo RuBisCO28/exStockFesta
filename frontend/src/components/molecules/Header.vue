@@ -11,6 +11,6 @@ export default {
 
 <template>
   <div>
-    <p>Hello</p>
+    <p>Hello1</p>
   </div>
 </template>
