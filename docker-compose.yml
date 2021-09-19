@@ -17,3 +17,12 @@ services:
       - "3000:3000"
     depends_on:
       - db
+
+  webpack:
+    build: ./frontend
+    command: [npm, run, start]
+    volumes:
+      - ./frontend:/frontend
+    ports:
+      - "3500:3500"
+
