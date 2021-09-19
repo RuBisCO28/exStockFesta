@@ -1,15 +1,20 @@
 const { VueLoaderPlugin } = require('vue-loader');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const path = require('path');
+const glob = require('glob')
+
+let entries = {}
+glob.sync("./src/*.js").map(function (key) {
+    let name = key.split('/')[2].split('.')[0];
+    entries[name] = key;
+});
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   const plugins = [new VueLoaderPlugin(), new WebpackManifestPlugin()];
   return {
     mode: "development",
-    entry: {
-      app: path.resolve(__dirname, './src/app.js')
-    },
+    entry: entries,
     output: {
       path: path.resolve(__dirname, './assets'),
       filename: isProduction ? '[name]-[contentHash].js' : '[name].js',

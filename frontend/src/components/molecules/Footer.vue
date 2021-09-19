@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'Header',
+  name: 'Footer',
   data() {
     return {
       test: 0,
@@ -11,6 +11,6 @@ export default {
 
 <template>
   <div>
-    <p>Hello</p>
+    <p>Hello2</p>
   </div>
 </template>
