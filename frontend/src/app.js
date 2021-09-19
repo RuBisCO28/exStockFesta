@@ -1,18 +1,8 @@
 import Vue from "vue";
+import Header from "./components/molecules/Header.vue";
 
-const component = () => {
-  const element = document.getElementById("app");
-  element.innerHTML = "Hello webpackaakk!!!";
-  return element;
-};
-
-document.body.appendChild(component());
-
-//document.addEventListener("DOMContentLoaded", () => {
-//  const templates = document.querySelectorAll("[data-vue]");
-
-//  for (let el of templates) {
-    //let app = new Vue(components[el.dataset.vue]);
-//    app.$mount(el);
-//  }
-//});
+document.addEventListener('DOMContentLoaded', () => {
+  new Vue({
+    render: h => h(Header),
+  }).$mount('#header-app');
+});

@@ -40,7 +40,7 @@ module WebpackBundleHelper
   end
 
   def dev_manifest
-    #OpenURI.open_uri("#{asset_server}/manifest.json").read
+    # MEMO: OpenURI.open_uri("#{asset_server}/manifest.json").readだとdocker上で動かない
     OpenURI.open_uri("http://stockfesta_webpack_1:3500/manifest.json").read
   end
 

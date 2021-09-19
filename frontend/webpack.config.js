@@ -12,8 +12,7 @@ module.exports = (env, argv) => {
     },
     output: {
       path: path.resolve(__dirname, './assets'),
-      //filename: isProduction ? '[name]-[contentHash].js' : '[name]-[hash].js',
-      filename: '[name].js',
+      filename: isProduction ? '[name]-[contentHash].js' : '[name].js',
       publicPath: ""
     },
     watch: true,
